@@ -18,7 +18,7 @@ st.write("API KEY loaded:", bool(st.secrets.get("OPENAI_API_KEY")))
 
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
-API_KEY = st.secrets["general"]["GAPGPT_API_KEY"]
+API_KEY = st.secrets["GAPGPT_API_KEY"]
 client = OpenAI(base_url="https://api.gapgpt.app/v1", api_key=API_KEY)
 
 # ---------------- UTILS ----------------
@@ -173,6 +173,7 @@ if summary_btn and question.strip():
         st.warning("هیچ متنی برای پردازش پیدا نشد!")
 
 st.caption("⚠️ این ابزار جایگزین مشاوره رسمی حقوقی نیست.")
+
 
 
 
