@@ -14,7 +14,7 @@ CHUNK_OVERLAP = 100
 MAX_CHUNKS_PER_STAGE = 1
 MAX_CHUNKS_DIRECT = 5
 SUMMARY_SIZE = 1500
- st.write("API KEY loaded:", bool(st.secrets.get("OPENAI_API_KEY")))
+st.write("API KEY loaded:", bool(st.secrets.get("OPENAI_API_KEY")))
 
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
@@ -173,5 +173,6 @@ if summary_btn and question.strip():
         st.warning("هیچ متنی برای پردازش پیدا نشد!")
 
 st.caption("⚠️ این ابزار جایگزین مشاوره رسمی حقوقی نیست.")
+
 
 
