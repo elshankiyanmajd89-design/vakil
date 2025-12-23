@@ -7,7 +7,7 @@ import pytesseract
 
 # ---------------- CONFIG ----------------
 MODEL = "gpt-4o-mini"
-MAX_CONTEXT_TOKENS = 120000  # کمتر از 128k
+MAX_CONTEXT_TOKENS = 120000
 CHUNK_SIZE = 1200
 CHUNK_OVERLAP = 100
 MAX_CHUNKS_PER_STAGE = 1
@@ -103,17 +103,17 @@ st.title("📄 مشاور حقوقی")
 if "stop_flag" not in st.session_state:
     st.session_state.stop_flag = False
 
-# ON/OFF منابع محلی
-use_local = st.checkbox("استفاده از منابع محلی روی لپ‌تاپ")
+# ON/OFF 
+use_local = st.checkbox("تخصص حقوقی")
 
-# آپلود PDF اختیاری
+# آ PDF 
 uploaded_file = st.file_uploader("Upload PDF (optional)", type=["pdf"])
 question = st.text_area("سوال خود را وارد کنید:", placeholder="مثلاً: پاسخ بده / خلاصه کن")
 
 # دکمه‌ها
 col1, col2, col3 = st.columns(3)
 with col1:
-    direct_api_btn = st.button("پاسخ مستقیم از GapGPT API")
+    direct_api_btn = st.button("پردازش")
 with col2:
     summary_btn = st.button("خلاصه‌سازی")
 with col3:
@@ -171,3 +171,4 @@ if summary_btn and question.strip():
         st.warning("هیچ متنی برای پردازش پیدا نشد!")
 
 st.caption("⚠️ این ابزار جایگزین مشاوره رسمی حقوقی نیست.")
+
